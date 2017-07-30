@@ -24,7 +24,7 @@ class k_cluster(object):
         # while True:
 
 def main():
-    data = pd.read_csv('plant_data_features.csv', header=0, index_col=False)
+    data = pd.read_csv('../data/plant_data_features.csv', header=0, index_col=False)
     data = data.values
 
     cluster = k_cluster(data, 1)

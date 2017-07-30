@@ -24,7 +24,7 @@ def plot_heat_map(data):
     plt.show()
 
 def main():
-    data = pd.read_csv('plant_data_features.csv', header=0, index_col=False)
+    data = pd.read_csv('../data/plant_data_features.csv', header=0, index_col=False)
     data = data.values
     plot_heat_map(data)
 

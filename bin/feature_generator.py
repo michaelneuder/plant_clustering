@@ -3,15 +3,15 @@ import csv
 import numpy as np
 
 def main():
-    with open('abbreviations.csv', 'r') as read_csv:
+    with open('../data/abbreviations.csv', 'r') as read_csv:
         reader = csv.reader(read_csv, delimiter=' ')
         abbreviations = []
         for line in reader:
             abbreviations.append(line[0])
     read_csv.close()
 
-    with open('plant_data.csv', 'r') as read_csv:
-        with open('plant_data_features.csv', 'w') as write_csv:
+    with open('../data/plant_data.csv', 'r') as read_csv:
+        with open('../data/plant_data_features.csv', 'w') as write_csv:
             write_csv.write('species,')
             abb_string = ''
             for abb in abbreviations:
