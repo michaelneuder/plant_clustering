@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import matplotlib.pyplot as plt
+plt.rcParams['font.size'] = 20
 import numpy as np
 import pandas as pd
 
@@ -16,11 +17,18 @@ def plot_heat_map(data):
     dim = 100
     distances = np.zeros([dim, dim])
     for plant1 in range(dim):
+        print(plant1)
         for plant2 in range(dim):
-            dist = get_euclidean_distance(data[plant1][1:], data[plant2][1:])
-            distances[plant1, plant2] = dist
-    plt.imshow(distances, cmap='terrain', interpolation='nearest')
+            if distances[plant2, plant1] == 0:
+                dist = get_euclidean_distance(data[plant1][1:], data[plant2][1:])
+                distances[plant1, plant2] = dist
+            else:
+                distances[plant1, plant2] = distances[plant2, plant1]
+    plt.imshow(distances, cmap='hot', interpolation='nearest')
     plt.colorbar()
+    plt.xlabel('Plant1 Identifier')
+    plt.ylabel('Plant2 Identifier')
+    plt.title('Distance Matrix')
     plt.show()
 
 def main():
