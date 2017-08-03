@@ -17,7 +17,6 @@ def plot_heat_map(data):
     dim = 100
     distances = np.zeros([dim, dim])
     for plant1 in range(dim):
-        print(plant1)
         for plant2 in range(dim):
             if distances[plant2, plant1] == 0:
                 dist = get_euclidean_distance(data[plant1][1:], data[plant2][1:])
