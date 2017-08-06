@@ -48,7 +48,7 @@ class k_cluster(object):
         np.random.shuffle(plant_list)
         centroids = data[:k]
         while True:
-
+            pass
 
 def main():
     data = pd.read_csv('../data/plant_data_features.csv', header=0, index_col=False)
